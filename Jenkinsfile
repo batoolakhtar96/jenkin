@@ -25,7 +25,7 @@ pipeline
                 echo 'Deploy App'
             }
         }
-    }
+    
         post
         {
             {
