@@ -1,4 +1,5 @@
-pipeline {
+pipeline
+{
     agent any
 
     stages 
@@ -25,11 +26,11 @@ pipeline {
             }
         }
     }
-      post
-      {
-         {
+        post
+        {
+            {
         always
              emailext body: 'summary about pipeline', subject: 'pipeline status', to: 'batoolakhtar96@gmail.com'
-          }
-    }
+             }
+        }
 }
