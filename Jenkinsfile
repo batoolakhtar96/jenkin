@@ -24,9 +24,9 @@ pipeline
                 echo 'Deploy App'
             }
         }
-    post
+        post
         {
-        always
+            always
             {
              emailext body: 'summary about pipeline', subject: 'pipeline status', to: 'batoolakhtar96@gmail.com'
              }
