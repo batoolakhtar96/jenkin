@@ -1,25 +1,19 @@
 pipeline {
     agent any
     stages {
-        stage('Build') {
+        stage('clone') {
             steps {
-                echo 'Build App1'
+                git branch: 'main', url:'https://github.com/batoolakhtar96/jenkin.git' 
             }
         }
-        stage('Test') {
-            steps {
-                echo 'Test App'
-            }
-        }
-        stage('Deploy') {
-            steps {
-                echo 'Deploy App'
+        stage("deploy")
+            {
+            steps
+                {
+                bat 'xcopy /s C:\\ProgramData\\Jenkins\\.jenkins\\workspace\\f2 D:\\website'
+                }
             }
         }
     }
-    post {
-        always {
-            emailext body: 'summary about pipeline', subject: 'pipeline status', to: 'batoolakhtar96@gmail.com'
-        }
-    }
-}
+    
+
